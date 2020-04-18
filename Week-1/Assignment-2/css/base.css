@@ -1,0 +1,115 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+	/* margin: 0; */
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+	font-size: .95em;
+}
+h2,
+h3,
+a {
+	color: #63302f;
+}
+h1,
+h2,
+h3 {
+	margin-top: 0;
+}
+a {
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+    display:flex;
+	font-size: 1.35em;
+	margin: 0;
+}
+.logo {
+    display:flex;
+    width: 80px;
+}
+.main-nav {
+    margin-top: 5px;
+    display:flex;
+}
+.name a,
+.main-nav a {
+	/* text-align: center;
+	display: block; */
+	padding: 10px 15px;
+}
+.main-nav a {
+	font-size: .95em;
+	color: #cd5c5c;
+	text-transform: uppercase;
+}
+.main-nav a:hover {
+	color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+    display:flex;
+    padding-top: .35em;
+	padding-bottom: .35em;
+}
+.main-header,
+.name, 
+.logo,
+.main-nav { 
+    justify-content: flex-start ; /* not align to left ? */
+}
+
+.banner,
+.main-footer,
+.section {
+	text-align: center;
+}
+.banner {
+	color: #fff;
+	background: #cd5c5c;
+	padding: 1em 0;
+	margin-bottom: 24px;
+}
+.col {
+	padding-right: 1em;
+	padding-left: 1em;
+}
+.main-footer {
+	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+/* ---- Page Elements ---- */
+
+.headline {
+	margin-bottom: 0;
+}
+.feat-img {
+	border-radius: 5px;
+}
