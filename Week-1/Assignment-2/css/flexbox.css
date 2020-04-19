@@ -9,6 +9,47 @@
   Media Queries
 ==================================== */
 
+@media (min-width: 0px) {
+	.main-header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between; 
+    }
+
+    .name-logo,
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .main-nav {
+      display: none;
+    }
+
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px;
+      justify-content: center;
+    }
+    .content-row1,
+    .content-row2 {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        /* margin: 5px auto;  
+        not working */
+    }
+
+    .content {
+        margin: 10px;
+    }
+
+}
+
+
 @media (min-width: 500px) {
 	.main-header {
     display: flex;
