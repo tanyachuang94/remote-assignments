@@ -1,40 +1,29 @@
 /* ================================= 
-  Base Styles
+  flexbox Styles
 ==================================== */
 
-body {
-    display:flex;
-   flex-direction:column;
-   min-height:100vh;
- }
- 
- .row{
-   flex:1;
- }
- 
+
+
 
 /* ================================= 
   Media Queries
 ==================================== */
 
-@media (min-width: 769px) {
-
-	.main-header,
-	.main-nav {
-		display: flex;
-	}
+@media (min-width: 1200px) {
 	.main-header {
-		flex-direction: column;
-		align-items: center;
-	}
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between; 
+    }
 
-}
+    .name-logo,
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 
-@media (min-width: 1025px) {
-
-	.main-header {
-		flex-direction: row;
-		justify-content: space-between;
-	}
+    
 
 }

@@ -9,7 +9,7 @@ body {
 	font-family: 'Varela Round', sans-serif;
 	line-height: 1.6;
 	color: #3a3a3a;
-	/* margin: 0; */
+	margin: 0;
 }
 ul {
   margin: 0;
@@ -45,17 +45,14 @@ img {
 /* ---- Navigation ---- */
 
 .name {
-    display:flex;
 	font-size: 1.35em;
 	margin: 0;
 }
 .logo {
-    display:flex;
     width: 80px;
 }
 .main-nav {
     margin-top: 5px;
-    display:flex;
 }
 .name a,
 .main-nav a {
@@ -75,15 +72,8 @@ img {
 /* ---- Layout Containers ---- */
 
 .main-header {
-    display:flex;
     padding-top: .35em;
 	padding-bottom: .35em;
-}
-.main-header,
-.name, 
-.logo,
-.main-nav { 
-    justify-content: flex-start ; /* not align to left ? */
 }
 
 .banner,
@@ -106,6 +96,8 @@ img {
 	padding: 2em 0;
 	margin-top: 30px;
 }
+
+
 
 /* ---- Page Elements ---- */
 
