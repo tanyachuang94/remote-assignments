@@ -24,6 +24,23 @@
         flex-direction: row;
     }
 
-    
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;  
+      justify-content: center;
+    }
+    .content-row1,
+    .content-row2 {
+        display: inline-flex;
+        width: 1200px;
+        justify-content: center;
+        /* margin: 5px auto;  
+        not working */
+    }
+
+    .content {
+        width: 50%;
+    }
 
 }
