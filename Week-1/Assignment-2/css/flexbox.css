@@ -9,7 +9,7 @@
   Media Queries
 ==================================== */
 
-@media (min-width: 0px) {
+@media (max-width: 500px) {
 	.main-header {
     display: flex;
     flex-wrap: wrap;
