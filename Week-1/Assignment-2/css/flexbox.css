@@ -7,8 +7,7 @@
 
 /* ================================= 
   Media Queries
-==================================== */
-
+i==================================== */
 @media (max-width: 500px) {
 	.main-header {
     display: flex;
@@ -36,9 +35,9 @@
     }
     .content-row1,
     .content-row2 {
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
+        /* justify-content: center; */
         /* margin: 5px auto;  
         not working */
     }
