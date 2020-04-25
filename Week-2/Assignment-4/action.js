@@ -1,11 +1,18 @@
 
-const headline = document.getElementById('headline');
-const menu = document.getElementById('menu');
+const welcome = document.querySelector(".welcome");
+const menu = document.querySelector(".menu");
+const fixed = document.querySelector(".fixed");
 
-headline.addEventListener("click", () => {
-  headline.textContent = "Have a Good Time!";
+welcome.addEventListener("click", () => {
+    welcome.textContent = "Have a Good Time!";
 });
 
-headline.addEventListener("click", () => {
-   
+menu.addEventListener("click", () => {
+    if (fixed.style.display == 'none') {
+        fixed.style.display = 'block';
+      } else {                    
+        fixed.style.display = 'none';
+      }        
   });
+
+
