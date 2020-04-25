@@ -1,13 +1,4 @@
-/* ================================= 
-  flexbox Styles
-==================================== */
 
-
-
-
-/* ================================= 
-  Media Queries
-i==================================== */
 @media (max-width: 500px) {
 	.main-header {
     display: flex;
@@ -26,6 +17,14 @@ i==================================== */
     .main-nav {
       display: none;
     }
+
+    .fixed {
+      position: fixed;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background-color: white;
+  }
 
     .box {
       display: flex;
