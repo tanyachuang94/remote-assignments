@@ -1,13 +1,7 @@
 function avg(data) {
     // your code here
-    class Products {
-        constructor( size , products ){
-            this.size = size
-            this.products = products;
-        }
+    return (data.products[0].price + data.products[1].price + data.products[2].price) / data.size
     }
-  
-}
 
     console.log( 
         avg({
