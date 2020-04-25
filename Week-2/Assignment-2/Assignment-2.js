@@ -1,15 +1,27 @@
-function calculate(args) { let result;
-    if (args.op === “+") {
+function calculate(args) { 
+    let result;
+    if (args.op === "+") {
     result = args.n1 + args.n2;
-    } else if(args.op === “-") {
+    } else if(args.op === "-") {
     result = args.n1 - args.n2;
     } else {
     result = "Not supported";
     }
-    return result; }
-    // Try to call calculate function correctly /*
-    For example, if we have an add function like this: function add(args){
-    return args.n1+args.n2; }
-    We can call it by passing an object created by JSON literal: add({n1:3, n2:4}); // your first way
-    You should find another way to create a proper object. // your second way
-    */
+    console.log(result);
+    return result; 
+}
+
+var args = new Object()
+args.op = "+" ;
+args.n1 = 1 ;
+args.n2 = 2 ;
+calculate(args)
+
+var args = new Object()
+args.op = "-" ;
+args.n1 = 1 ;
+args.n2 = 2 ;
+calculate(args)
+
+    //calculate({ op: "+", n1: 1, n2: 2 });
+    //calculate({ op: "-", n1: 1, n2: 2 });
