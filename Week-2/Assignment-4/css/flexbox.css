@@ -5,6 +5,9 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between; 
+    margin-top: 0px;
+    padding-top: 0px;
+
     }
 
     .name-logo,
@@ -12,11 +15,18 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        align-items: center;
     }
+
+    .menu {
+      margin-top: auto;
+    }
+
     .top-nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between; 
+      align-items: center;
     }
 
     .main-nav {
@@ -26,6 +36,7 @@
     .fixed {
       display: none;
       position: fixed;
+      align-items: center;
       right: 0;
       width: 200px;
       height: 100%;
@@ -41,6 +52,9 @@
 
     .box2{
       display: none;
+      flex-wrap: wrap;
+      margin: 10px;
+      justify-content: center;
     }
 
     .content-row1,
@@ -96,6 +110,9 @@
 
     .box2{
       display: none;
+      flex-wrap: wrap;
+      margin: 10px;
+      justify-content: center;
     }
 
     .content-row1,
@@ -150,6 +167,9 @@
 
     .box2{
       display: none;
+      flex-wrap: wrap;
+      margin: 10px;
+      justify-content: center;
     }
 
     .content-row1,
@@ -199,6 +219,9 @@
 
     .box2{
       display: none;
+      flex-wrap: wrap;
+      width: 100%; 
+      justify-content: center;
     }
 
     .content-row1,
