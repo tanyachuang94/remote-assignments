@@ -184,12 +184,11 @@
       justify-content: center;
     }
 
-    .box2{
+    .box2 {
+      display: none;
       flex-wrap: wrap;
       margin: 10px;
       justify-content: center;
-
-      display: none;
     }
 
     .content-row1,
@@ -237,11 +236,11 @@
       justify-content: center;
     }
 
-    .box2{
-      flex-wrap: wrap;
-      width: 100%; 
-      justify-content: center;
+    .box2 {
       display: none;
+      flex-wrap: wrap;
+      width: 100%;  
+      justify-content: center;
     }
 
     .content-row1,

@@ -19,7 +19,7 @@ icon.addEventListener("click", () => {
 });
 
 action.addEventListener("click", () => {   
-    box2.style.display = 'block';
+    box2.style.display = 'flex';
 });
 
 
