@@ -23,5 +23,5 @@ args.n1 = 1 ;
 args.n2 = 2 ;
 calculate(args)
 
-    //calculate({ op: "+", n1: 1, n2: 2 });
-    //calculate({ op: "-", n1: 1, n2: 2 });
+calculate({ op: "+", n1: 1, n2: 2 });
+calculate({ op: "-", n1: 1, n2: 2 });
