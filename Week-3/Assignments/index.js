@@ -1,13 +1,12 @@
 const express = require('express');
+const app = express();
 // const router = express.Router();
 // const bodyParser = require('body-Parser');
 // const cookieParser = require('cookie-Parser');
 
-const app = express();
+app.use ( express.static('public'));
 // app.use(bodyParser.urlencoded({extended:false}));
 // app.use(cookieParser());
-
-
 // app.set('view engine' ,'pug');
 
 // Assignment 1
@@ -21,11 +20,11 @@ app.get ('/getData', function (req , res) {
     if (number === 'xyz'){
         res.send("Wrong Parameter");
     } else if ( number > 0 ) {
-        var msg = "1";
-        for ( i = 2 ; i <= number ; i ++ ) {
-            msg += "+" + i ;
+        var sum = 0;
+        for ( i = 1 ; i <= number ; i ++ ) {
+            sum = sum + i ;
         }
-        res.send(msg);
+        res.send(sum.toString());
     } else {
         res.send("Lack of Parameter");
     }
