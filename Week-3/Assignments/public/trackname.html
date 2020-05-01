@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function loadDoc() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+            }
+        };
+        var username = document.getElementById("username").value
+        document.cookie = "Name=" + username;
+        xhr.open("GET", " http://localhost:3000/trackName?name=" + username , true);
+        xhr.send();
+    }
+    </script>
+</head>
+<body>
+    <div id="demo">
+    <input id="username"></input>
+    <button id="submit" type="button" onclick="loadDoc()">submit</button>
+    </div>
+</body>
+</html>

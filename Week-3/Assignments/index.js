@@ -1,16 +1,16 @@
 const express = require('express');
-const app = express();
+const cookieParser = require('cookie-parser');
 // const router = express.Router();
 // const bodyParser = require('body-Parser');
-// const cookieParser = require('cookie-Parser');
 
-app.use ( express.static('public'));
+const app = express();
+app.use (express.static('public'));
+app.use(cookieParser());
 // app.use(bodyParser.urlencoded({extended:false}));
-// app.use(cookieParser());
 // app.set('view engine' ,'pug');
 
 // Assignment 1
-app.get ('/', (req , res) => {
+app.get ('/', function (req , res) {
     res.send("Hello, I'm Tanya.");
 });
 
@@ -30,20 +30,24 @@ app.get ('/getData', function (req , res) {
     }
 });
 
-// app.get ('/getData', (req , res) => {
-//     res.redirect(`/?number=${}`);
-// });
+// Assignment 4
 
+app.get ('/myName', function (req , res) {
+    
+    //  var username = req.query.username ;
+    // if (username == ''){
+        console.log('Cookies: ', req.cookies);
+        // return res.redirect('trackname.html');
+    // } else {
+    //     res.cookie('username', req.body.username);
+    //     console.log('Cookies: ', req.cookies);
+    // }
+});
 
-
-// app.get ('/myName', (req , res) => {
-//     res.send({ name : req.cookies.username});
-// });
-
-// app.post ('/myName', (req , res) => {
-//     res.cookie('username', req.body.username);
-//     res.send({ name : req.body.username});
-// });
+app.post ('/trackName', (req , res) => {
+    res.cookie('name', req.body.username);
+    res.send( 'myName' , {name : req.cookies.username} );
+});
 
 app.listen(3000, () => {
     console.log('running on localhost:3000')
