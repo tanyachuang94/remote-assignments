@@ -31,22 +31,21 @@ app.get ('/getData', function (req , res) {
 });
 
 // Assignment 4
-
 app.get ('/myName', function (req , res) {
-    
-    //  var username = req.query.username ;
-    // if (username == ''){
-        console.log('Cookies: ', req.cookies);
-        // return res.redirect('trackname.html');
-    // } else {
-    //     res.cookie('username', req.body.username);
-    //     console.log('Cookies: ', req.cookies);
-    // }
+    var username = req.cookies.name 
+    if ( username != ''){
+        res.send("Done");
+    } else {
+        res.redirect('trackname.html');
+    }
+    console.dir(req.cookies.name)
 });
 
-app.post ('/trackName', (req , res) => {
-    res.cookie('name', req.body.username);
-    res.send( 'myName' , {name : req.cookies.username} );
+app.get ('/trackName', (req , res) => {
+    var username = req.query.name ;
+    res.cookie('name', username);
+    res.redirect('/myName');
+   
 });
 
 app.listen(3000, () => {
