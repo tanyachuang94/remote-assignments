@@ -32,8 +32,12 @@ app.get ('/getData', function (req , res) {
 
 // Assignment 4
 app.get ('/myName', function (req , res) {
-    var username = req.cookies.name 
-    if ( username != ''){
+    var username = req.cookies.name
+    if (!username) {
+        res.redirect('trackname.html');
+    };
+
+    if ( username !== ''){
         res.send("Done");
     } else {
         res.redirect('trackname.html');
