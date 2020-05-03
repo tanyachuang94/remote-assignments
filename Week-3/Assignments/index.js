@@ -17,7 +17,7 @@ app.get ('/', function (req , res) {
 // Assignment 2
 app.get ('/getData', function (req , res) {
     const number = req.query.number
-    if (number === 'xyz'){
+    if (number === xyz){
         res.send("Wrong Parameter");
     } else if ( number > 0 ) {
         var sum = 0;
@@ -33,16 +33,18 @@ app.get ('/getData', function (req , res) {
 // Assignment 4
 app.get ('/myName', function (req , res) {
     var username = req.cookies.name
-    if (!username) {
-        res.redirect('trackname.html');
-    };
+    // if (!username) {
+    //     res.redirect('trackname.html');
+    // };
 
-    if ( username !== ''){
+    if ( username != undefined ){
         res.send("Done");
+    } else if ( username = '' ){
+        res.redirect('trackname.html');
     } else {
         res.redirect('trackname.html');
     }
-    console.dir(req.cookies.name)
+    // console.dir(req.cookies.name)
 });
 
 app.get ('/trackName', (req , res) => {
