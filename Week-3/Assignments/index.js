@@ -16,17 +16,19 @@ app.get ('/', function (req , res) {
 
 // Assignment 2
 app.get ('/getData', function (req , res) {
-    const number = req.query.number
-    if (number === xyz){
-        res.send("Wrong Parameter");
-    } else if ( number > 0 ) {
+    const number = req.query.number;
+    if ( number > 0 ) {
         var sum = 0;
         for ( i = 1 ; i <= number ; i ++ ) {
             sum = sum + i ;
-        }
+        }  
         res.send(sum.toString());
-    } else {
-        res.send("Lack of Parameter");
+    } 
+    else if ( number === undefined ){
+        res.send("Lack of Parameter"); 
+    } 
+    else {
+        res.send("Wrong Parameter");
     }
 });
 
