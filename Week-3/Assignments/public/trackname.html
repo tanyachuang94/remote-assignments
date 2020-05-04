@@ -6,7 +6,7 @@
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML = this.responseText;
+            document.getElementById("demo").innerHTML = this.responseText; // 讀取的檔案內容
             }
         };
         var username = document.getElementById("name").value
