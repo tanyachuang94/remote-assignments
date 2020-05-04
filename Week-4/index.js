@@ -1,10 +1,6 @@
-function delayedResult(n1, n2, delayTime, add ){
-    
-    setTimeout( add , delayTime);
-    add(n1+n2);
-
-
-    // setTimeout( callback, delayTime, n1, n2 );
+function delayedResult(n1, n2, delayTime, callback ){
+ 
+    setTimeout( callback, delayTime, n1+n2 );
 };
 
 
