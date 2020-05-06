@@ -2,11 +2,15 @@ const express = require('express');
 const app = express();
 
 function ajax(src, callback){
-    app.get (src, function (req , res) {
-        console.dir(req.protocol)
-        res.send("Hello, I'm Tanya.");
-    });
-}
+    app.get (src, callback){
+        // request(
+        //     url: ,
+        //     method: 'GET',
+        //  );
+        console.log(body);
+        response.end(JSON.stringify(body));
+        }
+};
 // function render(data){
     // your code here.
     // document.createElement() and appendChild() methods are preferred.
