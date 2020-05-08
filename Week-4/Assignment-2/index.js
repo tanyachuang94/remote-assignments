@@ -1,6 +1,7 @@
 function ajax(src, callback){
+    var url = src;
     var xhr = new XMLHttpRequest();
-    xhr.open( 'GET', 'src' , false);
+    xhr.open( 'GET', url , false);
     // var data = JSON.parse(xhr.responseText);
     xhr.send();
     console.log(xhr.responseText);
