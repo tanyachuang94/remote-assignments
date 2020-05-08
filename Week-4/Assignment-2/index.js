@@ -1,13 +1,14 @@
 function ajax(src, callback){
     var xhr = new XMLHttpRequest();
     xhr.open( 'GET', 'src' , false);
-    // var data = xhr.responseText;
+    // var data = JSON.parse(xhr.responseText);
     xhr.send();
-    console.log(src);
-   
+    console.log(xhr.responseText);
+    // callback();
 };
 
 // function render(data){
+    // let list = document.getElementById("list");
 //     list.innerHTML="";
 //     let device;
 // 		for(let i=0;i<data.length;i++){
