@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>	
+	<!-- <script src="index.js"></script> -->
+    <script>
+		function signup(){
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("sign").innerHTML = this.responseText;
+			}
+        };
+		var email = document.getElementById("email").value;
+		var pw = document.getElementById("pw").value;
+        xhr.open("GET", " http://localhost:3000/signup?email=" + email + "&password=" + pw, true);
+        xhr.send();
+    	}
+    </script>
+</head>
+<body >
+	<div id="sign">
+	<form action="index.html" method="get">
+	<p> E-mail: </br>
+	<input id="email"></input></br>
+	Password:</br>
+	<input id="pw"></input>
+	</p>
+	<button id="sign-up" type="button" onclick="signup();"> sign up </button>
+	<button id="sign-in" type="button" onclick="signin()"> sign in </button>
+	</div>
+
+</body>
+</html>

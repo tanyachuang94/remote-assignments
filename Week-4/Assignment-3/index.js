@@ -1,5 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
+const app = express();
+app.use (express.static('public'));
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -15,26 +17,47 @@ db.connect((err) => {
     console.log('Mysql connected.');
 });
 
-const app = express();
+app.get('/signup',(req, res) => {
+    const email = req.query.email;
+    const pw = req.query.password;
 
-app.get('/createdb',(req, res) => {
-    let sql = 'Create Database assignment';
-    db.query(sql, (err,result) => {
+    let sql = `SELECT * FROM assignment.user WHERE email = '${email}'`;
+    let query = db.query(sql, (err,result) => {
         if (err) throw err;
-        console.log(result);
-        res.send('Database created.');
+        if (result = ''){
+            let post = {email: email, password: pw};
+            let sql = 'INSERT INTO user SET ?';
+            let query = db.query(sql, post, (err,result) => {
+             if (err) throw err;
+             res.redirect('member.html');
+            });
+        } else {
+            res.redirect('index.html');
+            res.send("same email exists."); 
+        }
+        xhr.send();
     });
+
 });
 
-app.get('/createpostable',(req, res) => {
-    let sql = 'CREATE TABLE user (id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY (id))';
-    db.query(sql, (err,result) => {
-        if (err) throw err
-        console.log(result);
-        res.send('User table created.');
-    });
-});
+// app.get('/createdb',(req, res) => {
+//     let sql = 'CREATE DATABASE assignment';
+//     db.query(sql, (err,result) => {
+//         if (err) throw err;
+//         console.log(result);
+//         res.send('Database created.');
+//     });
+// });
 
-app.listen('3000', () => {
+// app.get('/createpostable',(req, res) => {
+//     let sql = 'CREATE TABLE user (id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY (id))';
+//     db.query(sql, (err,result) => {
+//         if (err) throw err
+//         console.log(result);
+//         res.send('User table created.');
+//     });
+// });
+
+app.listen(3000, () => {
     console.log('Sever started on port 3000');
-});
+})
