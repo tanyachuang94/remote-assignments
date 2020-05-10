@@ -20,11 +20,10 @@ db.connect((err) => {
 app.get('/signup',(req, res) => {
     const email = req.query.email;
     const pw = req.query.password;
-
     let sql = `SELECT * FROM assignment.user WHERE email = '${email}'`;
     let query = db.query(sql, (err,result) => {
         if (err) throw err;
-        if (result = ''){
+        if (result.length == 0 ){
             let post = {email: email, password: pw};
             let sql = 'INSERT INTO user SET ?';
             let query = db.query(sql, post, (err,result) => {
@@ -32,12 +31,23 @@ app.get('/signup',(req, res) => {
              res.redirect('member.html');
             });
         } else {
-            res.redirect('index.html');
             res.send("same email exists."); 
         }
-        xhr.send();
     });
+});
 
+app.get('/signin',(req, res) => {
+    const email = req.query.email;
+    const pw = req.query.password;
+    let sql = `SELECT password FROM assignment.user WHERE email = '${email}'`;
+    let query = db.query(sql, (err,result) => {
+        if (err) throw err;
+        if (result[0].password == pw ){
+            res.redirect('member.html');
+        } else {
+            res.send("wrong password."); 
+        }
+    });
 });
 
 // app.get('/createdb',(req, res) => {
