@@ -39,9 +39,9 @@ app.post('/signup',(req, res) => {
     });
 });
 
-app.get('/signin',(req, res) => {
-    const email = req.query.email;
-    const pw = req.query.password;
+app.post('/signin',(req, res) => {
+    const email = req.body.email;
+    const pw = req.body.password;
     let sql = `SELECT password FROM assignment.user WHERE email = '${email}'`;
     let query = db.query(sql, (err,result) => {
         if (err) throw err;

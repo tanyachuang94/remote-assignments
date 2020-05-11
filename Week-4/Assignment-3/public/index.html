@@ -2,8 +2,7 @@
 <html>
 <head>
 <title>Home</title>	
-	<!-- <script src="index.js"></script> -->
-    <script>
+    <!-- <script>
 		function signup(){
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
@@ -23,7 +22,7 @@
 		xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("sign").innerHTML = this.responseText;
-			}
+			} 
         };
 		var email = document.getElementById("email").value;
 		var pw = document.getElementById("pw").value;
@@ -31,9 +30,9 @@
         xhr.send();
 		}
 		
-    </script>
+    </script> -->
 </head>
-<body >
+<body>
 	<div id="sign">
 	<form action="/signup" method="post">
 	<p> E-mail: </br>
@@ -42,9 +41,16 @@
 	<input id="pw" name="password" type="text"></input>
 	</p>
 	<button id="sign-up" type="submit"> sign up </button>
-	<!-- <button id="sign-in" type="submit" onclick="signin()"> sign in </button> -->
 	</form>
-	</div>
 
+	<form action="/signin" method="post">
+		<p> E-mail: </br>
+		<input id="email" name="email" type="text"></input></br>
+		Password:</br>
+		<input id="pw" name="password" type="text"></input>
+		</p>
+		<button id="sign-in" type="submit"> sign in </button>
+		</form>
+	</div>
 </body>
 </html>
