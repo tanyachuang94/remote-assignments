@@ -13,8 +13,9 @@
         };
 		var email = document.getElementById("email").value;
 		var pw = document.getElementById("pw").value;
-        xhr.open("GET", " http://localhost:3000/signup?email=" + email + "&password=" + pw, true);
-        xhr.send();
+		xhr.open("POST", " http://localhost:3000/signup", true);
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send("email="+email+"&password="+pw); 
 		}
 		
 		function signin(){
@@ -34,14 +35,15 @@
 </head>
 <body >
 	<div id="sign">
-	<form action="index.html" method="get">
+	<form action="/signup" method="post">
 	<p> E-mail: </br>
-	<input id="email"></input></br>
+	<input id="email" name="email" type="text"></input></br>
 	Password:</br>
-	<input id="pw"></input>
+	<input id="pw" name="password" type="text"></input>
 	</p>
-	<button id="sign-up" type="button" onclick="signup()"> sign up </button>
-	<button id="sign-in" type="button" onclick="signin()"> sign in </button>
+	<button id="sign-up" type="submit"> sign up </button>
+	<!-- <button id="sign-in" type="submit" onclick="signin()"> sign in </button> -->
+	</form>
 	</div>
 
 </body>

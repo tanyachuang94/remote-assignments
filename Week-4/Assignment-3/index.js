@@ -1,7 +1,10 @@
 const express = require('express');
+var bodyParser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
-app.use (express.static('public'));
+
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -17,9 +20,9 @@ db.connect((err) => {
     console.log('Mysql connected.');
 });
 
-app.get('/signup',(req, res) => {
-    const email = req.query.email;
-    const pw = req.query.password;
+app.post('/signup',(req, res) => {
+    const email = req.body.email;
+    const pw = req.body.password;
     let sql = `SELECT * FROM assignment.user WHERE email = '${email}'`;
     let query = db.query(sql, (err,result) => {
         if (err) throw err;
